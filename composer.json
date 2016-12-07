@@ -1,0 +1,23 @@
+{
+  "name": "liuchengguos/file",
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "guo",
+      "email": "164445438@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liuchengguos\\File\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
