@@ -1,5 +1,5 @@
 <?php
-namespace L-guo\File;
+namespace Guo\File;
 
 Class File
 {

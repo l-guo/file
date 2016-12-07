@@ -1,10 +1,10 @@
 {
-  "name": "l-guo/file",
+  "name": "guo/file",
   "description": "",
   "keywords": [],
   "homepage": "",
   "license": "MIT",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "guo",
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "L-guo\\File\\": "src/"
+      "Guo\\File\\": "src/"
     }
   },
   "minimum-stability": "dev"
