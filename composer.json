@@ -1,5 +1,5 @@
 {
-  "name": "liuchengguos/file",
+  "name": "l-guo/file",
   "description": "",
   "keywords": [],
   "homepage": "",
@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Liuchengguos\\File\\": "src/"
+      "L-guo\\File\\": "src/"
     }
   },
   "minimum-stability": "dev"

@@ -1,5 +1,5 @@
 <?php
-namespace Liuchengguos\File;
+namespace L-guo\File;
 
 Class File
 {
