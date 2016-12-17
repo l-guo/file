@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(realpath(__DIR__.'/../../resources/views'), 'LaravelVendorPackage');
 
-        $this->publishes([realpath(__DIR__.'/../../resources/views') => base_path('resources/views/vendor/askedio/laravelvendorpackage')], 'views');
+        $this->publishes([realpath(__DIR__.'/../../resources/views') => base_path('resources/views/vendor/guo/file')], 'views');
 
         $this->publishes([realpath(__DIR__.'/../../resources/assets') => public_path('assets')], 'public');
 
