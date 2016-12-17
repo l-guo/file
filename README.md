@@ -1,78 +1,46 @@
-# Boilerplate Laravel 5 Package
+# Laravel 5.3 Vendor Package Example
+### An example on how-to create a vendor package for Composer
 
-## Installation
+"Packages are the primary way of adding functionality to Laravel. Packages might be anything from a great way to work with dates like Carbon, or an entire BDD testing framework like Behat."
+https://laravel.com/docs/master/packages
 
-Clone this repo with minimal history:
+Use this package to help develop new packages to share among your projects -- or the world.
 
-```sh
-git clone --depth 1 git@github.com:cviebrock/laravel5-package-template.git
+# Installation
+1. Clone this repo.
+2. Rename the following to match your repository & package name:
+    * namespace: `Askedio\LaravelVendorPackage`
+    * composer package name: `askedio/laravel-vendor-package`
+    * resource namespace: `LaravelVendorPackage`
+3. Add to https://packagist.org.
+4. Using your details, install with commands below.
+
+# Installation
+Install a fresh copy of Laravel then require the package:
+```
+composer create-project --prefer-dist laravel/laravel blog
+cd blog
+composer require askedio/laravel-vendor-package:dev-master
+```
+## Register with config/app.php
+Register the service providers to enable the package:
+```
+Askedio\LaravelVendorPackage\Providers\AppServiceProvider::class,
 ```
 
-Rename the directory and re-init it as your own package:
-
-```sh
-mv laravel5-package-template my-package
-cd my-package
-rm -rf .git
-git init
+Autoload it:
 ```
-
-
-## Configuration
-
-The boilerplate files provide a scaffold for building your own package.  You'll need to make a bunch of changes to the files we've provided to make it your own.
-
-
-### composer.json
-
-Edit `composer.json` to reflect your package information.  At a minimum, you will need to change the package name and autoload lines so that "vendor/package" reflects your new package's name and namespace.
-
-```json
-{
-    "name": "vendor/package",
-    ...
-    "autoload": {
-        "psr-4": {
-            "Vendor\\Package\\": "src/"
-        }
-    },
-    ...
-},
+composer dumpautoload
 ```
-
-
-### config/packagename.php
-
-Rename `config/packagename.php` to something more useful, like `config/my-package.php`.  This is the configuration file that Laravel will publish into it's `config` directory.  Laravel 5 doesn't use the `config/packages/vendor/...` structure that Laravel 4 did, so pick a file name that's not likely to conflict with existing configuration files.
-
-
-### src/ServiceProvider.php
-
-Open up `src/ServiceProvider.php` as well.  At a minimum you'll need to change the namespace at the top of the file (it needs to match the PSR-4 namespace you set in `composer.json`).
-
-In the `boot()` method, comment out or uncomment the components your package will need.  For example, if your package only has a configuration, then you can comment out everything except the `handleConfigs()` call:
-
-```php
-public function boot() {
-    $this->handleConfigs();
-    // $this->handleMigrations();
-    // $this->handleViews();
-    // $this->handleTranslations();
-    // $this->handleRoutes();
-}
+## Test with Laravel
 ```
+php artisan serv
+```
+Browse to http://localhost:8000/dashboard
 
-In the `handleConfigs()` method, you'll want to change the "packagename" references to the name you chose up above (in the [config/packagename.php] instructions).
-
-For the other methods, again change instances of "vendor" and "packagename" to your package's name.
-
-
-### Last Steps
-
-Update the `LICENSE` file as required (make sure it matches what you said your package's license is in `composer.json`).
-
-Finally, edit this `README.md` file and replace it with a description of your own, awesome Laravel 5 package.
-
-Commit everything to your (newly initialized) git repo, and push it wherever you'll keep your package (Github, etc.).
-
-Enjoy coding!
+# Test the Package
+In the packages repository folder:
+```
+composer install
+vendor/bin/phpunit
+```
