@@ -8,39 +8,17 @@ Use this package to help develop new packages to share among your projects -- or
 
 # Installation
 1. Clone this repo.
-2. Rename the following to match your repository & package name:
-    * namespace: `Askedio\LaravelVendorPackage`
-    * composer package name: `askedio/laravel-vendor-package`
-    * resource namespace: `LaravelVendorPackage`
+
 3. Add to https://packagist.org.
 4. Using your details, install with commands below.
 
 # Installation
-Install a fresh copy of Laravel then require the package:
-```
-composer create-project --prefer-dist laravel/laravel blog
-cd blog
-composer require askedio/laravel-vendor-package:dev-master
-```
+
+composer require guo/file "dev-master"
+
 ## Register with config/app.php
 Register the service providers to enable the package:
 ```
-Askedio\LaravelVendorPackage\Providers\AppServiceProvider::class,
+Guo\File\Providers\AppServiceProvider::class,
 ```
 
-Autoload it:
-```
-composer dumpautoload
-```
-## Test with Laravel
-```
-php artisan serv
-```
-Browse to http://localhost:8000/dashboard
-
-# Test the Package
-In the packages repository folder:
-```
-composer install
-vendor/bin/phpunit
-```
