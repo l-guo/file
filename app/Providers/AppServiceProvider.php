@@ -1,6 +1,6 @@
 <?php
 
-namespace Askedio\LaravelVendorPackage\Providers;
+namespace Guo\File\Providers;
 
 use App;
 use Config;

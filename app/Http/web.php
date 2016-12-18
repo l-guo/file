@@ -11,5 +11,9 @@
 |
 */
 
-Route::get('dashboard', '\Guo\File\Http\Controllers\HomeController@index');
+Route::get('filelist', '\Guo\File\Http\Controllers\HomeController@filelist');
+Route::get('dirlist', '\Guo\File\Http\Controllers\HomeController@dirlist');
+Route::get('getlog', '\Guo\File\Http\Controllers\HomeController@getlog');
+Route::get('file', '\Guo\File\Http\Controllers\HomeController@getcontent');
+Route::get('delfile', '\Guo\File\Http\Controllers\HomeController@delfile');
 
