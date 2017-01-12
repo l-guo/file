@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => config("fileconfig.middleware")], function () {
     Route::group(['prefix' => config("fileconfig.prefix")], function () {
         Route::group(['namespace' => '\Guo\File\Http\Controllers'], function () {
 //            Route::get('filelist', 'HomeController@filelist');
@@ -22,7 +22,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('file/delete', 'FileController@delete');
             Route::get('file/select', 'FileController@select');
             Route::post('file/update', 'FileController@update');
-            Route::get('getlog', 'FileController@getlog');
+            Route::get('file/getlog', 'FileController@getlog');
 
         });
     });

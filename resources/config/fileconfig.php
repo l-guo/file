@@ -12,6 +12,8 @@ return [
      *路由前缀
      */
     "prefix"=>"",
+
+    'middleware'=>array("web"),
     /*
      * 模板继承的路径
      */
