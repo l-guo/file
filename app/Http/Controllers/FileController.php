@@ -41,21 +41,23 @@ class FileController extends Controller
         $status=File::put($request->file, $content);
 //        dd($status);
         if($status){
-            return back();
+            return back()->with("messages","修改成功");
+        }else{
+            return back()->withErrors("修改失败")
         }
     }
 
     public  function  delete(Request $request){
         $dirname=$request->dir;
         if(empty($dirname)){
-            return back();
+            return back()->withErrors("目录不能为空");
         }else{
             $status=File::isWritable($dirname);
             if($status){
                 File::deleteDirectory($dirname, $preserve = false);
-                return back();
+                return back()->with("messages","删除成功");
             }else{
-                return back();
+                return back()->withErrors("删除失败");
             }
 
         }

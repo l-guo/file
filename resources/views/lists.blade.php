@@ -5,6 +5,7 @@
             文件系统
         </h1>
     </section>
+    @include('file::message')
     <section class="content">
         <div class="box" id="list">
             <div class="box-body">
