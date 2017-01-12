@@ -2,7 +2,6 @@
 
 namespace Guo\File\Http\Controllers;
 
-use Illuminate\Routing\Controller as Controller;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

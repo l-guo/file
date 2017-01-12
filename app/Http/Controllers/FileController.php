@@ -63,4 +63,17 @@ class FileController extends Controller
         }
 
     }
+    public  function  getlog(Request $request){
+        $dir = dirname(storage_path("logs"));
+        $dirname=$request->dir?$request->dir:$dir;
+        $status=File::isFile($dirname);
+        if($status){
+            $content=File::get($dirname);
+            return view("file::content",['data'=>$content,'type'=>'select','dir'=>$dirname]);
+        }else{
+            $filelist = File::files($dirname);
+            $dirs = File::directories($dirname);
+            return view("file::lists",['dir'=>$dirs,'file'=>$filelist]);
+        }
+    }
 }
