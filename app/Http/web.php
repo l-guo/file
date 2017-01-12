@@ -18,7 +18,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('getlog', 'HomeController@getlog');
             Route::get('file', 'HomeController@getcontent');
             Route::get('delfile', 'HomeController@delfile');
-            Route::get('lists', 'FileController@lists');
+            Route::get('file/lists', 'FileController@lists');
             Route::get('file/delete', 'FileController@delete');
             Route::get('file/select', 'FileController@select');
             Route::post('file/update', 'FileController@update');

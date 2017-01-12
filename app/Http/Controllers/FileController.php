@@ -43,7 +43,7 @@ class FileController extends Controller
         if($status){
             return back()->with("messages","修改成功");
         }else{
-            return back()->withErrors("修改失败")
+            return back()->withErrors("修改失败");
         }
     }
 

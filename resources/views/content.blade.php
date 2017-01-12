@@ -13,7 +13,7 @@
                     <div class="row" style="margin-bottom: 20px; padding-right:2%; text-align: right">
                         {{ csrf_field() }}
                         @if($type=='update')
-                            <a href="/lists?dir={{$dir}}" class="btn btn-default">取消</a>
+                            <a href="/file/lists?dir={{$dir}}" class="btn btn-default">取消</a>
                             <input type="submit" class="btn btn-primary" value="保存">
                         @else
                             <a href="/file/select?dir={{$dir}}" class="btn btn-default">编辑</a>
