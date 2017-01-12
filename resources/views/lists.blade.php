@@ -49,7 +49,7 @@
                                                 @if (count($file) > 0  )
                                                 @foreach($file as $data)
                                                     <tr role="row" class="odd">
-                                                        <td class="sorting_1"><a href="/lists?dir={{$data}}">{{$data}}</a></td>
+                                                        <td class="sorting_1"><a href="/file/lists?dir={{$data}}">{{$data}}</a></td>
                                                         <td class="sorting_1">
                                                             <a href="/file/select?dir={{$data}}" class="btn btn-default">编辑</a>
                                                             <a href="/file/delete?dir={{$data}}" class="btn btn-danger">删除</a>
