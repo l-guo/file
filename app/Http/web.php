@@ -10,10 +10,20 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::group(['middleware' => ['web']], function () {
+    Route::group(['prefix' => config("fileconfig.prefix")], function () {
+        Route::group(['namespace' => '\Guo\File\Http\Controllers'], function () {
+            Route::get('filelist', 'HomeController@filelist');
+            Route::get('dirlist', 'HomeController@dirlist');
+            Route::get('getlog', 'HomeController@getlog');
+            Route::get('file', 'HomeController@getcontent');
+            Route::get('delfile', 'HomeController@delfile');
+            Route::get('lists', 'FileController@lists');
+            Route::get('file/delete', 'FileController@delete');
+            Route::get('file/select', 'FileController@select');
+            Route::post('file/update', 'FileController@update');
 
-Route::get('filelist', '\Guo\File\Http\Controllers\HomeController@filelist');
-Route::get('dirlist', '\Guo\File\Http\Controllers\HomeController@dirlist');
-Route::get('getlog', '\Guo\File\Http\Controllers\HomeController@getlog');
-Route::get('file', '\Guo\File\Http\Controllers\HomeController@getcontent');
-Route::get('delfile', '\Guo\File\Http\Controllers\HomeController@delfile');
+        });
+    });
+});
 

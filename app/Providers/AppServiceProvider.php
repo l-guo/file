@@ -28,19 +28,12 @@ class AppServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             require realpath(__DIR__.'/../Http/web.php');
         }
+        $this->mergeConfigFrom(
+            __DIR__.'/../../resources/config/fileconfig.php', 'fileconfig'
+        );
 
-        $this->loadTranslationsFrom(realpath(__DIR__.'/../../resources/lang'), 'LaravelVendorPackage');
+        $this->loadViewsFrom(realpath(__DIR__.'/../../resources/views'), 'file');
 
-        $this->loadViewsFrom(realpath(__DIR__.'/../../resources/views'), 'LaravelVendorPackage');
-
-        $this->publishes([realpath(__DIR__.'/../../resources/views') => base_path('resources/views/vendor/guo/file')], 'views');
-
-        $this->publishes([realpath(__DIR__.'/../../resources/assets') => public_path('assets')], 'public');
-
-        $this->publishes([realpath(__DIR__.'/../../resources/config') => config_path('')], 'config');
-
-        $this->publishes([realpath(__DIR__.'/../../database/migrations') => database_path('migrations')], 'migrations');
-
-        $this->publishes([realpath(__DIR__.'/../../database/seeds') => database_path('seeds')], 'seeds');
+        $this->publishes([realpath(__DIR__.'/../../resources/config') => config_path('')], 'file');
     }
 }
