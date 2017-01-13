@@ -55,21 +55,47 @@ class FileController extends Controller
         if (empty($dirname)) {
             return back()->withErrors("目录不能为空");
         } else {
-            echo $status = File::isWritable($dirname);
 
-            if ($status) {
+$status = $this->check($dirname);
+
+            // echo $status = File::isWritable($dirname);
+
+            if ($status == false) {
+                return back()->withErrors("不可删除");
+                die;
+            } else {
                 $sta = File::isFile($dirname);
                 if ($sta) {
-                    $this->file($dirname);
+                   $result = File::delete($dirname);
+                    if ($result) {
+                        return back()->with("messages", array("删除成功"));
+                    } else {
+                        return back()->withErrors("删除失败");
+                    }
                 } else {
-                    $this->dir($dirname);
+                   $result = File::deleteDirectory($dirname);
+                    if ($result) {
+                        return back()->with("messages", array("删除成功"));
+                    } else {
+                        return back()->withErrors("删除失败");
+                    }
+
                 }
-            } else {
-                return back()->withErrors("删除失败");
-            }
+                die;
+            } 
 
         }
 
+    }
+
+    public function check($dirname){
+         $status = File::isWritable($dirname);
+
+            if ($status) {
+                return true;
+            }else{
+               return false;
+            }
     }
 
 
