@@ -17,7 +17,8 @@ class FileController extends Controller
         $status = File::isFile($dirname);
         if ($status) {
             $content = File::get($dirname);
-            return view("file::content", ['data' => $content, 'type' => 'select', 'dir' => $dirname]);
+            $Write = File::isWritable($dirname);
+            return view("file::content", ['data' => $content, 'type' => 'select', 'dir' => $dirname,'Write'=>$Write]);
         } else {
             $filelist = File::files($dirname);
             $dirs = File::directories($dirname);

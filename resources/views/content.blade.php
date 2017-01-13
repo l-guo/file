@@ -15,7 +15,7 @@
                         @if($type=='update')
                             <a href="/file/lists?dir={{$dir}}" class="btn btn-default">取消</a>
                             <input type="submit" class="btn btn-primary" value="保存">
-                        @else
+                        @elseif($Write)
                             <a href="/file/select?dir={{$dir}}" class="btn btn-default">编辑</a>
                             <a href="/file/delete?dir={{$dir}}" class="btn btn-danger">删除</a>
                         @endif
