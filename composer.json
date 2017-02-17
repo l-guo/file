@@ -1,28 +1,35 @@
 {
-    "name": "guo/file",
-    "description": " Vendor Package",
-    "keywords": ["laravel"],
-    "license": "MIT",
-    "type": "library",
-    "require": {
-        "php": ">=5.3"
-     },
-     "require-dev": {
-        "laravel/laravel": "5.*",
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Guo\\File\\": "app/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Askedio\\LaravelVendorPackage\\Tests\\" : "tests"
-        }
+  "name": "guo/file",
+  "description": " Vendor Package",
+  "keywords": [
+    "laravel"
+  ],
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": ">=5.3"
+  },
+  "require-dev": {
+    "laravel/laravel": "5.*",
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpunit/phpunit": "~5.0",
+    "symfony/css-selector": "3.1.*",
+    "symfony/dom-crawler": "3.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Guo\\File\\": "app/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Askedio\\LaravelVendorPackage\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.0"
+    }
+  }
 }
