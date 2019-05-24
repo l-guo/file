@@ -7,12 +7,6 @@ https://laravel.com/docs/master/packages
 Use this package to help develop new packages to share among your projects -- or the world.
 
 # Installation
-1. Clone this repo.
-
-3. Add to https://packagist.org.
-4. Using your details, install with commands below.
-
-# Installation
 
 composer require guo/file "dev-master"
 
